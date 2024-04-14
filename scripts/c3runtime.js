@@ -4233,6 +4233,7 @@ self.C3_GetObjectRefTable = function () {
 		C3.Plugins.Audio,
 		C3.Plugins.Browser,
 		C3.Plugins.System.Cnds.OnLayoutStart,
+		C3.Plugins.System.Acts.ResetGlobals,
 		C3.Plugins.System.Acts.SetLayerVisible,
 		C3.Plugins.System.Cnds.IsGroupActive,
 		C3.Plugins.Touch.Cnds.OnTouchObject,
@@ -4441,9 +4442,9 @@ function or(l, r)
 }
 
 self.C3_ExpressionFuncs = [
+		() => "background",
 		() => "konuAnlatimi",
 		() => "buttons",
-		() => "background",
 		() => "bilgi",
 		() => "Gizle-Goster",
 		() => "KonuAnlatımı",
