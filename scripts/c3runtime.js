@@ -4255,14 +4255,17 @@ self.C3_GetObjectRefTable = function () {
 		C3.Plugins.Browser.Acts.CancelFullScreen,
 		C3.Plugins.Audio.Acts.SetPaused,
 		C3.Plugins.System.Acts.SetVar,
+		C3.Plugins.System.Acts.RestartLayout,
+		C3.Plugins.System.Acts.AddVar,
 		C3.Behaviors.DragnDrop.Cnds.OnDragStart,
 		C3.Plugins.Sprite.Exps.X,
 		C3.Plugins.Sprite.Exps.Y,
 		C3.Behaviors.DragnDrop.Cnds.OnDrop,
 		C3.Plugins.Sprite.Cnds.IsOverlapping,
 		C3.Plugins.Sprite.Acts.SetPos,
-		C3.Plugins.System.Acts.AddVar,
-		C3.Plugins.System.Cnds.CompareVar
+		C3.Plugins.System.Cnds.CompareVar,
+		C3.Plugins.Mouse.Exps.X,
+		C3.Plugins.Mouse.Exps.Y
 	];
 };
 self.C3_JsPropNameTable = [
@@ -4278,6 +4281,8 @@ self.C3_JsPropNameTable = [
 	{ortadakiCicek: 0},
 	{gunes: 0},
 	{paletRenkler: 0},
+	{oyun_sonu: 0},
+	{firca: 0},
 	{kapla: 0},
 	{btnFullScreen: 0},
 	{Touch: 0},
@@ -4300,12 +4305,15 @@ self.C3_JsPropNameTable = [
 	{konuAnlatimi: 0},
 	{btnGeri: 0},
 	{btnIleri: 0},
+	{btnEtkinligiBitir: 0},
+	{btnYenidenBasla: 0},
 	{butonlar: 0},
 	{boyanacaklar: 0},
 	{x1: 0},
 	{y1: 0},
 	{puan: 0},
-	{renk: 0}
+	{renk: 0},
+	{tik_sayisi: 0}
 ];
 
 self.InstanceType = {
@@ -4320,6 +4328,8 @@ self.InstanceType = {
 	ortadakiCicek: class extends self.ISpriteInstance {},
 	gunes: class extends self.ISpriteInstance {},
 	paletRenkler: class extends self.ISpriteInstance {},
+	oyun_sonu: class extends self.ISpriteInstance {},
+	firca: class extends self.ISpriteInstance {},
 	btnFullScreen: class extends self.ISpriteInstance {},
 	Touch: class extends self.IInstance {},
 	Mouse: class extends self.IInstance {},
@@ -4340,6 +4350,8 @@ self.InstanceType = {
 	konuAnlatimi: class extends self.ISpriteInstance {},
 	btnGeri: class extends self.ISpriteInstance {},
 	btnIleri: class extends self.ISpriteInstance {},
+	btnEtkinligiBitir: class extends self.ISpriteInstance {},
+	btnYenidenBasla: class extends self.ISpriteInstance {},
 	butonlar: class extends self.ISpriteInstance {},
 	boyanacaklar: class extends self.ISpriteInstance {}
 }
@@ -4469,6 +4481,7 @@ self.C3_ExpressionFuncs = [
 		() => "muzik",
 		() => "oyun_1",
 		() => "oyun_2",
+		() => "bos",
 		p => {
 			const n0 = p._GetNode(0);
 			return () => n0.ExpObject();
@@ -4477,7 +4490,12 @@ self.C3_ExpressionFuncs = [
 			const v0 = p._GetNode(0).GetVar();
 			return () => v0.GetValue();
 		},
-		() => 5
+		() => 2,
+		p => {
+			const f0 = p._GetNode(0).GetBoundMethod();
+			return () => f0();
+		},
+		() => 4
 ];
 
 
