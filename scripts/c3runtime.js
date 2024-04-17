@@ -4235,20 +4235,24 @@ self.C3_GetObjectRefTable = function () {
 		C3.Plugins.System.Cnds.OnLayoutStart,
 		C3.Plugins.System.Acts.ResetGlobals,
 		C3.Plugins.System.Acts.SetLayerVisible,
+		C3.Plugins.System.Cnds.Compare,
+		C3.Plugins.Audio.Acts.Play,
 		C3.Plugins.System.Cnds.IsGroupActive,
 		C3.Plugins.Touch.Cnds.OnTouchObject,
+		C3.Plugins.Audio.Acts.Stop,
 		C3.Plugins.System.Cnds.LayerVisible,
 		C3.Plugins.Sprite.Acts.SetVisible,
+		C3.Plugins.System.Acts.Wait,
 		C3.Plugins.Sprite.Acts.SetAnimFrame,
+		C3.Plugins.Sprite.Cnds.CompareFrame,
+		C3.Plugins.Sprite.Cnds.OnFrameChanged,
 		C3.Plugins.Touch.Cnds.IsTouchingObject,
 		C3.Plugins.System.Cnds.TriggerOnce,
 		C3.Plugins.Sprite.Exps.AnimationFrame,
-		C3.Plugins.Sprite.Cnds.CompareFrame,
 		C3.Plugins.System.Acts.GoToLayout,
 		C3.Plugins.Mouse.Cnds.IsOverObject,
 		C3.Plugins.Mouse.Acts.SetCursor,
 		C3.Plugins.System.Cnds.Else,
-		C3.Plugins.System.Cnds.Compare,
 		C3.Plugins.Sprite.Acts.SetAnim,
 		C3.Plugins.Sprite.Acts.SetInstanceVar,
 		C3.Plugins.Browser.Acts.RequestFullScreen,
@@ -4458,26 +4462,31 @@ self.C3_ExpressionFuncs = [
 		() => "konuAnlatimi",
 		() => "buttons",
 		() => "bilgi",
-		() => "Gizle-Goster",
-		() => "KonuAnlatımı",
-		() => 0,
-		p => {
-			const n0 = p._GetNode(0);
-			return () => (n0.ExpObject() + 1);
-		},
-		() => 6,
-		p => {
-			const n0 = p._GetNode(0);
-			return () => (n0.ExpObject() - 1);
-		},
 		p => {
 			const n0 = p._GetNode(0);
 			return () => n0.ExpInstVar();
 		},
-		() => "close",
 		() => 1,
-		() => "open",
+		() => 0,
 		() => "ses",
+		() => "Gizle-Goster",
+		() => 8,
+		() => "KonuAnlatımı",
+		() => 2,
+		() => 3,
+		() => 4,
+		() => 5,
+		() => 6,
+		p => {
+			const n0 = p._GetNode(0);
+			return () => (n0.ExpObject() + 1);
+		},
+		p => {
+			const n0 = p._GetNode(0);
+			return () => (n0.ExpObject() - 1);
+		},
+		() => "close",
+		() => "open",
 		() => "muzik",
 		() => "oyun_1",
 		() => "oyun_2",
@@ -4490,13 +4499,11 @@ self.C3_ExpressionFuncs = [
 			const v0 = p._GetNode(0).GetVar();
 			return () => v0.GetValue();
 		},
-		() => 2,
-		() => 5,
+		() => 7,
 		p => {
 			const f0 = p._GetNode(0).GetBoundMethod();
 			return () => f0();
-		},
-		() => 4
+		}
 ];
 
 
