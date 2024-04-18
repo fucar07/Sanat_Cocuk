@@ -4260,6 +4260,7 @@ self.C3_GetObjectRefTable = function () {
 		C3.Plugins.Audio.Acts.SetPaused,
 		C3.Plugins.System.Acts.SetVar,
 		C3.Plugins.System.Acts.RestartLayout,
+		C3.Plugins.Sprite.Cnds.IsVisible,
 		C3.Plugins.System.Acts.AddVar,
 		C3.Behaviors.DragnDrop.Cnds.OnDragStart,
 		C3.Plugins.Sprite.Exps.X,
